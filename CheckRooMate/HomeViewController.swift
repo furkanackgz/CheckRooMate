@@ -18,6 +18,10 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         tableView.delegate = self
         tableView.dataSource = self
         
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

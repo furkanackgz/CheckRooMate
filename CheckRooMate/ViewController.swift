@@ -9,13 +9,14 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var textFieldEmail: UITextField!
+
+    @IBOutlet weak var textFieldUsername: UITextField!
     @IBOutlet weak var textFieldPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textFieldEmail.delegate = self
+        textFieldUsername.delegate = self
         textFieldPassword.delegate = self
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -36,7 +37,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.textFieldEmail.resignFirstResponder()
+        self.textFieldUsername.resignFirstResponder()
         self.textFieldPassword.resignFirstResponder()
         return true
     }

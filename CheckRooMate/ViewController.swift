@@ -17,6 +17,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         textFieldEmail.delegate = self
         textFieldPassword.delegate = self
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(gestureRecognizer)
     }
 
     
@@ -28,6 +31,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @objc func hideKeyboard(){
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.textFieldEmail.resignFirstResponder()
+        self.textFieldPassword.resignFirstResponder()
+        return true
+    }
     
 }
 

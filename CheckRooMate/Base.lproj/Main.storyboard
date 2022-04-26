@@ -58,6 +58,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign in"/>
+                                <connections>
+                                    <action selector="buttonSignInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ImF-B0-yO3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDr-GE-8uc">
                                 <rect key="frame" x="119" y="801" width="176" height="31"/>
@@ -67,6 +70,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Don't have an account?"/>
+                                <connections>
+                                    <action selector="buttonDontHaveAnAccountTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WwB-MH-1Vd"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Csc-iI-qR1">
                                 <rect key="frame" x="40" y="206" width="334" height="40"/>
@@ -102,6 +108,10 @@
                             <constraint firstItem="K96-WP-SWc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y1y-HF-yJZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textFieldEmail" destination="Csc-iI-qR1" id="NgM-rI-lrp"/>
+                        <outlet property="textFieldPassword" destination="r1r-Qo-agh" id="iCF-b1-mwj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -304,20 +304,20 @@
         <!--Home-->
         <scene sceneID="pR8-Gl-rDy">
             <objects>
-                <viewController id="qJs-vF-xcq" sceneMemberID="viewController">
+                <viewController id="qJs-vF-xcq" customClass="HomeViewController" customModule="CheckRooMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wTQ-8b-eO4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="sdafsdfa" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="arC-Ey-sfA">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="arC-Ey-sfA">
                                 <rect key="frame" x="20" y="64" width="374" height="100"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="hg6-Ex-nb4"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to add Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vV9-rx-9gW">
                                 <rect key="frame" x="20" y="176" width="272" height="30"/>
@@ -336,6 +336,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Post"/>
+                                <connections>
+                                    <action selector="buttonPostTapped:" destination="qJs-vF-xcq" eventType="touchUpInside" id="FsU-2b-tGT"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WXC-V5-Gua">
                                 <rect key="frame" x="0.0" y="226" width="414" height="587"/>
@@ -371,6 +374,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="twe-Om-hsX"/>
+                    <connections>
+                        <outlet property="labelTapToAddPhoto" destination="vV9-rx-9gW" id="wjA-pX-NCS"/>
+                        <outlet property="tableView" destination="WXC-V5-Gua" id="Yhv-he-HrL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNc-9d-SmQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

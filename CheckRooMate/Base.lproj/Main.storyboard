@@ -80,7 +80,7 @@
                                     <constraint firstAttribute="height" constant="40" id="Soz-PH-J27"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="88.392857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="4Mk-8w-HYt">
             <objects>
-                <viewController id="HMF-kt-6af" sceneMemberID="viewController">
+                <viewController id="HMF-kt-6af" customClass="SignUpViewController" customModule="CheckRooMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FHY-Tn-eyQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,7 +149,7 @@
                                     <constraint firstAttribute="height" constant="40" id="sgP-ag-Hls"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nkt-U5-3bB">
                                 <rect key="frame" x="40" y="308" width="334" height="40"/>
@@ -157,7 +157,7 @@
                                     <constraint firstAttribute="height" constant="40" id="lfG-T2-Lsj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WRu-v6-FmD">
                                 <rect key="frame" x="40" y="410" width="334" height="40"/>
@@ -165,7 +165,7 @@
                                     <constraint firstAttribute="height" constant="40" id="syC-DA-dBF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3G-at-3dd">
                                 <rect key="frame" x="40" y="368" width="45" height="30"/>
@@ -200,7 +200,7 @@
                                     <constraint firstAttribute="height" constant="40" id="pt8-h0-c1q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMj-md-4JB">
                                 <rect key="frame" x="40" y="614" width="334" height="40"/>
@@ -208,7 +208,7 @@
                                     <constraint firstAttribute="height" constant="40" id="T9H-Lq-BKW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNj-pF-paL">
                                 <rect key="frame" x="40" y="714" width="334" height="40"/>
@@ -217,6 +217,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign up"/>
+                                <connections>
+                                    <action selector="buttonSignUpTapped:" destination="HMF-kt-6af" eventType="touchUpInside" id="RaG-bF-89N"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrH-Ku-sUy">
                                 <rect key="frame" x="40" y="266" width="75.5" height="30"/>
@@ -266,6 +269,13 @@
                             <constraint firstItem="yJP-rb-i5Q" firstAttribute="leading" secondItem="E6M-n1-0ck" secondAttribute="leading" constant="40" id="xzt-Sx-TkP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textFieldEmail" destination="tMj-md-4JB" id="gf7-qW-m76"/>
+                        <outlet property="textFieldName" destination="WRu-v6-FmD" id="bTq-ds-Nrx"/>
+                        <outlet property="textFieldPassword" destination="Nkt-U5-3bB" id="Orp-TH-pB5"/>
+                        <outlet property="textFieldSurname" destination="HB0-8s-H2y" id="DIm-Zn-C6g"/>
+                        <outlet property="textFieldUsername" destination="yJP-rb-i5Q" id="UBw-kp-dBU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ex4-A6-Y1S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

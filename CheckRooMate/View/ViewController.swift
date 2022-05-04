@@ -25,11 +25,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBAction func buttonSignInTapped(_ sender: Any) {
-        
+        performSegue(withIdentifier: "toHomeVC", sender: nil)
     }
     
     @IBAction func buttonDontHaveAnAccountTapped(_ sender: Any) {
-        
+        performSegue(withIdentifier: "toSignUpVC", sender: nil)
     }
     
     @objc func hideKeyboard(){

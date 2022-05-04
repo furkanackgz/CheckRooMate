@@ -302,7 +302,7 @@
             </objects>
             <point key="canvasLocation" x="2522" y="433"/>
         </scene>
-        <!--Home-->
+        <!--Home View Controller-->
         <scene sceneID="pR8-Gl-rDy">
             <objects>
                 <viewController id="qJs-vF-xcq" customClass="HomeViewController" customModule="CheckRooMate" customModuleProvider="target" sceneMemberID="viewController">
@@ -311,7 +311,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WXC-V5-Gua">
-                                <rect key="frame" x="0.0" y="134" width="414" height="679"/>
+                                <rect key="frame" x="0.0" y="178" width="414" height="635"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="125" id="aUw-i6-URG">
@@ -325,7 +325,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rcf-M2-4zU">
-                                <rect key="frame" x="0.0" y="64" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you looking for a Roommate?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2O-i9-Sic">
                                         <rect key="frame" x="0.0" y="0.0" width="346" height="50"/>
@@ -370,15 +370,32 @@
                             <constraint firstItem="rcf-M2-4zU" firstAttribute="top" secondItem="Ybv-mw-pVm" secondAttribute="top" constant="20" id="lEG-n7-2gE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="twe-Om-hsX"/>
+                    <navigationItem key="navigationItem" id="aDV-JE-BJc"/>
                     <connections>
                         <outlet property="labelAreYouLookingFor" destination="S2O-i9-Sic" id="riH-Lw-BhP"/>
                         <outlet property="tableView" destination="WXC-V5-Gua" id="Yhv-he-HrL"/>
+                        <segue destination="h3e-VK-pzZ" kind="show" identifier="toPostVC" id="LMR-EG-X5r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HNc-9d-SmQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2521.739130434783" y="-260.49107142857144"/>
+            <point key="canvasLocation" x="3445" y="-260"/>
+        </scene>
+        <!--Post View Controller-->
+        <scene sceneID="xyW-3x-ASp">
+            <objects>
+                <viewController id="h3e-VK-pzZ" customClass="PostViewController" customModule="CheckRooMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OHI-qR-7sc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="sV2-7A-k7O"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Afe-on-GYf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Co4-pS-Azy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4362" y="-260"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="X3V-Lw-sKS">
@@ -391,13 +408,32 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="qJs-vF-xcq" kind="relationship" relationship="viewControllers" id="J4c-Yj-tXj"/>
+                        <segue destination="nXf-18-Pju" kind="relationship" relationship="viewControllers" id="J4c-Yj-tXj"/>
                         <segue destination="oTS-iT-YPt" kind="relationship" relationship="viewControllers" id="ph1-c4-HGv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rFi-wc-jf1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1209" y="88"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="fuQ-Fn-eLy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nXf-18-Pju" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="twe-Om-hsX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="elg-XC-Pqf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qJs-vF-xcq" kind="relationship" relationship="rootViewController" id="Wxz-UV-3vH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tqb-xf-upd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2521.739130434783" y="-260.49107142857144"/>
         </scene>
     </scenes>
     <resources>

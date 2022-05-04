@@ -26,6 +26,7 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
     }
     
     @objc func toPostVC() {
+        performSegue(withIdentifier: "toPostVC", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

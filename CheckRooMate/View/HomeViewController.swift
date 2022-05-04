@@ -8,8 +8,8 @@
 import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
-
-    @IBOutlet weak var labelTapToAddPhoto: UILabel!
+    
+    @IBOutlet weak var labelAreYouLookingFor: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -18,10 +18,14 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         tableView.delegate = self
         tableView.dataSource = self
         
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+        labelAreYouLookingFor.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(toPostVC))
+        //tap.cancelsTouchesInView = false
+        labelAreYouLookingFor.addGestureRecognizer(tap)
         
+    }
+    
+    @objc func toPostVC() {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,7 +39,8 @@ class HomeViewController: UIViewController, UITableViewDelegate,UITableViewDataS
     }
     
     
-    @IBAction func buttonPostTapped(_ sender: Any) {
+    @IBAction func buttonCameraTapped(_ sender: Any) {
+        
     }
     
 }

@@ -388,10 +388,29 @@
                     <view key="view" contentMode="scaleToFill" id="OHI-qR-7sc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hPg-Ux-L3J">
+                                <rect key="frame" x="0.0" y="98" width="414" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Gwu-xm-8bv"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sV2-7A-k7O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sV2-7A-k7O" firstAttribute="trailing" secondItem="hPg-Ux-L3J" secondAttribute="trailing" id="v17-Sk-Di5"/>
+                            <constraint firstItem="hPg-Ux-L3J" firstAttribute="leading" secondItem="sV2-7A-k7O" secondAttribute="leading" id="vND-Ps-brW"/>
+                            <constraint firstItem="hPg-Ux-L3J" firstAttribute="top" secondItem="sV2-7A-k7O" secondAttribute="top" constant="10" id="zdX-aE-uhz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Afe-on-GYf"/>
+                    <connections>
+                        <outlet property="textView" destination="hPg-Ux-L3J" id="PFX-9b-Z3b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Co4-pS-Azy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import PhotosUI
 
 class PostViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imageView: UIImageView!
+    var selectedPhotos = [UIImage]()
+    var previousPicker: PHPickerViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +73,7 @@ class PostViewController: UIViewController, UITextViewDelegate {
     }
     
 }
-extension PostViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+extension PostViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate, PHPickerViewControllerDelegate {
     
     func showActionSheet() {
         let actionSheet = UIAlertController(title: nil, message: "Choose Source", preferredStyle: .actionSheet)
@@ -82,6 +85,9 @@ extension PostViewController: UIImagePickerControllerDelegate & UINavigationCont
         actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { _ in
             self.openPhotoLibrary()
         }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
         self.present(actionSheet, animated: true)
     }
     
@@ -96,12 +102,36 @@ extension PostViewController: UIImagePickerControllerDelegate & UINavigationCont
     }
     
     func openPhotoLibrary() {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.sourceType = .photoLibrary
-            picker.allowsEditing = true
-            present(picker, animated: true, completion: nil)
+        var configuration = PHPickerConfiguration()
+        configuration.filter = .any(of: [.livePhotos, .images, .videos])
+        configuration.preferredAssetRepresentationMode = .automatic
+        configuration.selection = .ordered
+        configuration.selectionLimit = 20
+        
+        let picker = PHPickerViewController(configuration: configuration)
+        self.previousPicker = picker
+        picker.delegate = self
+        self.present(picker, animated: true, completion: nil)
+    }
+    
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        self.selectedPhotos.removeAll(keepingCapacity: false)
+        
+        self.dismiss(animated: true, completion: nil)
+        let itemProviders = results.map(\.itemProvider)
+        for item in itemProviders {
+            if item.canLoadObject(ofClass: UIImage.self) {
+                item.loadObject(ofClass: UIImage.self) { (image, error) in
+                    DispatchQueue.main.async {
+                        if let image = image as? UIImage {
+                            //self.imageView.image = nil
+                            //self.imageView.image = image
+                            self.selectedPhotos.append(image)
+                        }
+                    }
+                }
+            }
         }
     }
     

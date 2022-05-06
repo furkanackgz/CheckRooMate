@@ -10,6 +10,7 @@ import UIKit
 class PostViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,5 +63,50 @@ class PostViewController: UIViewController, UITextViewDelegate {
     
     @objc func hideKeyboard(){
         self.view.endEditing(true)
+    }
+    
+    @IBAction func addImageBttnTapped(_ sender: Any) {
+        showActionSheet()
+    }
+    
+}
+extension PostViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    func showActionSheet() {
+        let actionSheet = UIAlertController(title: nil, message: "Choose Source", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.openCamera()
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { _ in
+            self.openPhotoLibrary()
+        }))
+        self.present(actionSheet, animated: true)
+    }
+    
+    func openCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.sourceType = .camera
+            picker.allowsEditing = true
+            present(picker, animated: true, completion: nil)
+        }
+    }
+    
+    func openPhotoLibrary() {
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.sourceType = .photoLibrary
+            picker.allowsEditing = true
+            present(picker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        imageView.image = info[.editedImage] as? UIImage
+        self.dismiss(animated: true, completion: nil)
     }
 }

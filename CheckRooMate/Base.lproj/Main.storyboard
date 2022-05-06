@@ -384,7 +384,7 @@
         <!--Post View Controller-->
         <scene sceneID="xyW-3x-ASp">
             <objects>
-                <viewController id="h3e-VK-pzZ" customClass="PostViewController" customModule="CheckRooMate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="h3e-VK-pzZ" customClass="PostViewController" customModule="CheckRooMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OHI-qR-7sc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -398,10 +398,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tTC-PE-sOo">
+                                <rect key="frame" x="0.0" y="258" width="414" height="494"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G01-u0-gW0">
+                                <rect key="frame" x="131" y="782" width="152" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pgy-YZ-Z64"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="xCL-Cq-W1s"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="tintColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Add Image " titleAlignment="center">
+                                    <imageReference key="image" image="camera.on.rectangle" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="semibold"/>
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="19"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addImageBttnTapped:" destination="h3e-VK-pzZ" eventType="touchUpInside" id="PMq-zN-1CZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sV2-7A-k7O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="sV2-7A-k7O" firstAttribute="trailing" secondItem="tTC-PE-sOo" secondAttribute="trailing" id="IfJ-aa-v0T"/>
+                            <constraint firstItem="tTC-PE-sOo" firstAttribute="leading" secondItem="sV2-7A-k7O" secondAttribute="leading" id="Ko4-GP-U4J"/>
+                            <constraint firstItem="G01-u0-gW0" firstAttribute="centerX" secondItem="OHI-qR-7sc" secondAttribute="centerX" id="OWo-CJ-Awo"/>
+                            <constraint firstItem="G01-u0-gW0" firstAttribute="top" secondItem="tTC-PE-sOo" secondAttribute="bottom" constant="30" id="Zgu-Ns-NZ0"/>
+                            <constraint firstItem="tTC-PE-sOo" firstAttribute="top" secondItem="hPg-Ux-L3J" secondAttribute="bottom" constant="10" id="c2X-4r-2te"/>
+                            <constraint firstItem="sV2-7A-k7O" firstAttribute="bottom" secondItem="G01-u0-gW0" secondAttribute="bottom" constant="30" id="mkO-UX-DKE"/>
                             <constraint firstItem="sV2-7A-k7O" firstAttribute="trailing" secondItem="hPg-Ux-L3J" secondAttribute="trailing" id="v17-Sk-Di5"/>
                             <constraint firstItem="hPg-Ux-L3J" firstAttribute="leading" secondItem="sV2-7A-k7O" secondAttribute="leading" id="vND-Ps-brW"/>
                             <constraint firstItem="hPg-Ux-L3J" firstAttribute="top" secondItem="sV2-7A-k7O" secondAttribute="top" constant="10" id="zdX-aE-uhz"/>
@@ -409,12 +435,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Afe-on-GYf"/>
                     <connections>
+                        <outlet property="imageView" destination="tTC-PE-sOo" id="Tdh-hj-k4v"/>
                         <outlet property="textView" destination="hPg-Ux-L3J" id="PFX-9b-Z3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Co4-pS-Azy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4362" y="-260"/>
+            <point key="canvasLocation" x="4360.8695652173919" y="-260.49107142857144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="X3V-Lw-sKS">
@@ -457,6 +484,7 @@
     </scenes>
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
+        <image name="camera.on.rectangle" catalog="system" width="128" height="96"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">

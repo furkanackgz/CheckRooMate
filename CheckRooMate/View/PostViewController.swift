@@ -123,8 +123,6 @@ extension PostViewController: UIImagePickerControllerDelegate & UINavigationCont
     
     
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        self.selectedPhotos.removeAll(keepingCapacity: false)
-        
         self.dismiss(animated: true, completion: nil)
         let itemProviders = results.map(\.itemProvider)
         for item in itemProviders {
@@ -185,10 +183,17 @@ extension PostViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell
-        
-        selectedPhotos.remove(at: indexPath.row)
-        
+        let actionSheet = UIAlertController(title: "Remove Image", message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Remove", style: .destructive, handler: { _ in
+            self.selectedPhotos.remove(at: indexPath.row)
+            collectionView.reloadData()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Remove All", style: .destructive, handler: { _ in
+            self.selectedPhotos.removeAll(keepingCapacity: false)
+            collectionView.reloadData()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(actionSheet, animated: true)
     }
     
 }

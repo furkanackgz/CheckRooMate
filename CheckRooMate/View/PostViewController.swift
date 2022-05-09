@@ -11,9 +11,15 @@ import PhotosUI
 class PostViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var collectionView: UICollectionView!{
+        didSet {
+            collectionView.dataSource = self
+            collectionView.delegate = self
+            
+            collectionView.collectionViewLayout = self.createBasicListLayout()
+        }
+    }
     var selectedPhotos = [UIImage]()
-    var previousPicker: PHPickerViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +30,7 @@ class PostViewController: UIViewController, UITextViewDelegate {
         textView.delegate = self
         
         addDoneBttnToKeyboard()
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +80,7 @@ class PostViewController: UIViewController, UITextViewDelegate {
     }
     
 }
+
 extension PostViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate, PHPickerViewControllerDelegate {
     
     func showActionSheet() {
@@ -109,7 +117,6 @@ extension PostViewController: UIImagePickerControllerDelegate & UINavigationCont
         configuration.selectionLimit = 20
         
         let picker = PHPickerViewController(configuration: configuration)
-        self.previousPicker = picker
         picker.delegate = self
         self.present(picker, animated: true, completion: nil)
     }
@@ -125,9 +132,8 @@ extension PostViewController: UIImagePickerControllerDelegate & UINavigationCont
                 item.loadObject(ofClass: UIImage.self) { (image, error) in
                     DispatchQueue.main.async {
                         if let image = image as? UIImage {
-                            //self.imageView.image = nil
-                            //self.imageView.image = image
                             self.selectedPhotos.append(image)
+                            self.collectionView.reloadData()
                         }
                     }
                 }
@@ -135,8 +141,54 @@ extension PostViewController: UIImagePickerControllerDelegate & UINavigationCont
         }
     }
     
+    /*
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         imageView.image = info[.editedImage] as? UIImage
         self.dismiss(animated: true, completion: nil)
     }
+    */
+
+}
+
+extension PostViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return selectedPhotos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as? ImageCollectionViewCell {
+            cell.imageView.image = selectedPhotos[indexPath.row]
+            cell.imageView.contentMode = .scaleAspectFill
+            return cell
+        } else {
+            return UICollectionViewCell()
+        }
+    }
+    
+    func createBasicListLayout() -> UICollectionViewLayout {
+        let fraction: CGFloat = 1 / 3
+        let inset: CGFloat = 2.5
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fraction), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(fraction))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
+        
+        return UICollectionViewCompositionalLayout(section: section)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell
+        
+        selectedPhotos.remove(at: indexPath.row)
+        
+    }
+    
 }

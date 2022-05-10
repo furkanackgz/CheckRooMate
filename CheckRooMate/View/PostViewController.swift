@@ -10,7 +10,15 @@ import PhotosUI
 
 class PostViewController: UIViewController, UITextViewDelegate {
 
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: UITextView! {
+        didSet{
+            textView.text = "Enter text"
+            textView.textColor = UIColor.lightGray
+            
+            textView.delegate = self
+        }
+    }
+    
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet {
             collectionView.dataSource = self
@@ -19,15 +27,11 @@ class PostViewController: UIViewController, UITextViewDelegate {
             collectionView.collectionViewLayout = self.createBasicListLayout()
         }
     }
+    
     var selectedPhotos = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        textView.text = "Enter text"
-        textView.textColor = UIColor.lightGray
-        
-        textView.delegate = self
         
         addDoneBttnToKeyboard()
     
@@ -40,9 +44,13 @@ class PostViewController: UIViewController, UITextViewDelegate {
         
     }
     
-    @objc func doneBttnTapped() {
-        navigationController?.popViewController(animated: true)
+    @IBAction func addImageBttnTapped(_ sender: Any) {
+        showActionSheet()
     }
+    
+}
+
+extension PostViewController {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
@@ -75,8 +83,8 @@ class PostViewController: UIViewController, UITextViewDelegate {
         self.view.endEditing(true)
     }
     
-    @IBAction func addImageBttnTapped(_ sender: Any) {
-        showActionSheet()
+    @objc func doneBttnTapped() {
+        navigationController?.popViewController(animated: true)
     }
     
 }

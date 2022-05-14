@@ -11,6 +11,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textFieldUsername: UITextField!
     @IBOutlet weak var textFieldPassword: UITextField!
+    @IBOutlet weak var textFieldPasswordAgain: UITextField!
     @IBOutlet weak var textFieldName: UITextField!
     @IBOutlet weak var textFieldSurname: UITextField!
     @IBOutlet weak var textFieldEmail: UITextField!
@@ -20,6 +21,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         textFieldUsername.delegate = self
         textFieldPassword.delegate = self
+        textFieldPasswordAgain.delegate = self
         textFieldName.delegate = self
         textFieldSurname.delegate = self
         textFieldEmail.delegate = self
@@ -35,6 +37,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.textFieldUsername.resignFirstResponder()
         self.textFieldPassword.resignFirstResponder()
+        self.textFieldPasswordAgain.resignFirstResponder()
         self.textFieldName.resignFirstResponder()
         self.textFieldSurname.resignFirstResponder()
         self.textFieldEmail.resignFirstResponder()

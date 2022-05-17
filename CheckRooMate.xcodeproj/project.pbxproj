@@ -15,6 +15,7 @@
 		0B5F970E2816D9DB00A18BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B5F970D2816D9DB00A18BE5 /* Assets.xcassets */; };
 		0B5F97112816D9DB00A18BE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5F970F2816D9DB00A18BE5 /* LaunchScreen.storyboard */; };
 		0B5F971B2817DA7600A18BE5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5F971A2817DA7600A18BE5 /* SignUpViewController.swift */; };
+		0B8758B5283273AD00603D00 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8758B4283273AD00603D00 /* WebService.swift */; };
 		0B9779D728180728008970D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9779D628180728008970D6 /* HomeViewController.swift */; };
 		0BBEEBFB282922F6000F5FBB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBEEBFA282922F6000F5FBB /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,7 @@
 		0B5F97102816D9DB00A18BE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B5F97122816D9DB00A18BE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B5F971A2817DA7600A18BE5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		0B8758B4283273AD00603D00 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		0B9779D628180728008970D6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0BBEEBFA282922F6000F5FBB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 		0B5F97032816D9D600A18BE5 /* CheckRooMate */ = {
 			isa = PBXGroup;
 			children = (
+				0B8758B32832738700603D00 /* Services */,
 				0B2988A82818554C00D654F8 /* View Model */,
 				0B2988A72818554100D654F8 /* Model */,
 				0B2988A62818553300D654F8 /* View */,
@@ -101,6 +104,14 @@
 				0B5F97122816D9DB00A18BE5 /* Info.plist */,
 			);
 			path = CheckRooMate;
+			sourceTree = "<group>";
+		};
+		0B8758B32832738700603D00 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0B8758B4283273AD00603D00 /* WebService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 			files = (
 				0B562572282255AC00413489 /* PostViewController.swift in Sources */,
 				0B9779D728180728008970D6 /* HomeViewController.swift in Sources */,
+				0B8758B5283273AD00603D00 /* WebService.swift in Sources */,
 				0B5F97092816D9D600A18BE5 /* ViewController.swift in Sources */,
 				0BBEEBFB282922F6000F5FBB /* ImageCollectionViewCell.swift in Sources */,
 				0B5F97052816D9D600A18BE5 /* AppDelegate.swift in Sources */,

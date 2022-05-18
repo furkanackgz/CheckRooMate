@@ -39,7 +39,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     }
                     else {
                         // show allert and looks like you dont have an account ask would you like to sign up
-                        self.performSegue(withIdentifier: "toSignUpVC", sender: nil)
                     }
                     
                 }

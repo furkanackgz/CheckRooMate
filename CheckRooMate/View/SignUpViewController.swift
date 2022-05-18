@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController{
+class SignUpViewController: UIViewController {
 
     @IBOutlet weak var textFieldUsername: UITextField! {
         didSet{

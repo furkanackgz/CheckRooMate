@@ -12,7 +12,7 @@
 		0B5CE18C2834B03B00D854DD /* IsLoginSuccessfulResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CE18B2834B03B00D854DD /* IsLoginSuccessfulResponse.swift */; };
 		0B5F97052816D9D600A18BE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5F97042816D9D600A18BE5 /* AppDelegate.swift */; };
 		0B5F97072816D9D600A18BE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5F97062816D9D600A18BE5 /* SceneDelegate.swift */; };
-		0B5F97092816D9D600A18BE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5F97082816D9D600A18BE5 /* ViewController.swift */; };
+		0B5F97092816D9D600A18BE5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5F97082816D9D600A18BE5 /* SignInViewController.swift */; };
 		0B5F970C2816D9D600A18BE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5F970A2816D9D600A18BE5 /* Main.storyboard */; };
 		0B5F970E2816D9DB00A18BE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B5F970D2816D9DB00A18BE5 /* Assets.xcassets */; };
 		0B5F97112816D9DB00A18BE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5F970F2816D9DB00A18BE5 /* LaunchScreen.storyboard */; };
@@ -29,7 +29,7 @@
 		0B5F97012816D9D600A18BE5 /* CheckRooMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckRooMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5F97042816D9D600A18BE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B5F97062816D9D600A18BE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0B5F97082816D9D600A18BE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0B5F97082816D9D600A18BE5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		0B5F970B2816D9D600A18BE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B5F970D2816D9DB00A18BE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B5F97102816D9DB00A18BE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 			children = (
 				0B5F97042816D9D600A18BE5 /* AppDelegate.swift */,
 				0B5F97062816D9D600A18BE5 /* SceneDelegate.swift */,
-				0B5F97082816D9D600A18BE5 /* ViewController.swift */,
+				0B5F97082816D9D600A18BE5 /* SignInViewController.swift */,
 				0B5F971A2817DA7600A18BE5 /* SignUpViewController.swift */,
 				0B9779D628180728008970D6 /* HomeViewController.swift */,
 				0B562571282255AC00413489 /* PostViewController.swift */,
@@ -195,7 +195,7 @@
 				0B5CE18A2834AF4000D854DD /* UserLoginResult.swift in Sources */,
 				0B9779D728180728008970D6 /* HomeViewController.swift in Sources */,
 				0B8758B5283273AD00603D00 /* WebService.swift in Sources */,
-				0B5F97092816D9D600A18BE5 /* ViewController.swift in Sources */,
+				0B5F97092816D9D600A18BE5 /* SignInViewController.swift in Sources */,
 				0BBEEBFB282922F6000F5FBB /* ImageCollectionViewCell.swift in Sources */,
 				0B5CE18C2834B03B00D854DD /* IsLoginSuccessfulResponse.swift in Sources */,
 				0B5F97052816D9D600A18BE5 /* AppDelegate.swift in Sources */,

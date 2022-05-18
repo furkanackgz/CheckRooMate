@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B562572282255AC00413489 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B562571282255AC00413489 /* PostViewController.swift */; };
+		0B5CE18A2834AF4000D854DD /* UserLoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CE1892834AF4000D854DD /* UserLoginResult.swift */; };
+		0B5CE18C2834B03B00D854DD /* IsLoginSuccessfulResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CE18B2834B03B00D854DD /* IsLoginSuccessfulResponse.swift */; };
 		0B5F97052816D9D600A18BE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5F97042816D9D600A18BE5 /* AppDelegate.swift */; };
 		0B5F97072816D9D600A18BE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5F97062816D9D600A18BE5 /* SceneDelegate.swift */; };
 		0B5F97092816D9D600A18BE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5F97082816D9D600A18BE5 /* ViewController.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		0B562571282255AC00413489 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		0B5CE1892834AF4000D854DD /* UserLoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserLoginResult.swift; path = CheckRooMate/UserLoginResult.swift; sourceTree = SOURCE_ROOT; };
+		0B5CE18B2834B03B00D854DD /* IsLoginSuccessfulResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IsLoginSuccessfulResponse.swift; path = CheckRooMate/IsLoginSuccessfulResponse.swift; sourceTree = SOURCE_ROOT; };
 		0B5F97012816D9D600A18BE5 /* CheckRooMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckRooMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5F97042816D9D600A18BE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B5F97062816D9D600A18BE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 		0B2988A72818554100D654F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0B5CE1892834AF4000D854DD /* UserLoginResult.swift */,
+				0B5CE18B2834B03B00D854DD /* IsLoginSuccessfulResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,10 +192,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B562572282255AC00413489 /* PostViewController.swift in Sources */,
+				0B5CE18A2834AF4000D854DD /* UserLoginResult.swift in Sources */,
 				0B9779D728180728008970D6 /* HomeViewController.swift in Sources */,
 				0B8758B5283273AD00603D00 /* WebService.swift in Sources */,
 				0B5F97092816D9D600A18BE5 /* ViewController.swift in Sources */,
 				0BBEEBFB282922F6000F5FBB /* ImageCollectionViewCell.swift in Sources */,
+				0B5CE18C2834B03B00D854DD /* IsLoginSuccessfulResponse.swift in Sources */,
 				0B5F97052816D9D600A18BE5 /* AppDelegate.swift in Sources */,
 				0B5F971B2817DA7600A18BE5 /* SignUpViewController.swift in Sources */,
 				0B5F97072816D9D600A18BE5 /* SceneDelegate.swift in Sources */,

@@ -25,7 +25,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBAction func buttonSignInTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toHomeVC", sender: nil)
+        
+        guard let username = textFieldUsername.text,
+              let password = textFieldPassword.text else {
+            return
+        }
+        
+        WebService.run.signInUser(username, password) { isLoginSuccessful in
+            DispatchQueue.main.async {
+                if let isLoginSuccessfulResult = isLoginSuccessful.isLoginSuccessful {
+                    if isLoginSuccessfulResult {
+                        self.performSegue(withIdentifier: "toHomeVC", sender: nil)
+                    }
+                    else {
+                        // show allert and looks like you dont have an account ask would you like to sign up
+                        self.performSegue(withIdentifier: "toSignUpVC", sender: nil)
+                    }
+                    
+                }
+            }
+        }
+        
     }
     
     @IBAction func buttonDontHaveAnAccountTapped(_ sender: Any) {

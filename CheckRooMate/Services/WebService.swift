@@ -61,4 +61,43 @@ class WebService {
         }
         task.resume()
     }
+    
+    func signInUser(_ username: String, _ password: String, _ CompletionHandler: @escaping (IsLoginSuccessfulResponse)->(Void)) {
+        
+        guard let url = URL(string: "https://bezkoder-server.herokuapp.com/api/login") else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let json = [
+            "username" : username,
+            "password" : password
+        ]
+        
+        do{
+            request.httpBody = try JSONSerialization.data(withJSONObject: json)
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
+        let _ = session.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            do {
+                let json = try JSONDecoder().decode(IsLoginSuccessfulResponse.self, from: data!)
+                CompletionHandler(json)
+                
+            } catch let error {
+                print(error)
+            }
+            
+        }.resume()
+        
+    }
 }

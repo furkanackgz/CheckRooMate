@@ -12,9 +12,9 @@ class WebService {
     static let run: WebService = WebService()
     let session = URLSession.shared
     
-    func postUserRegistrationData(_ username: String, _ password: String) {
+    func signUpUser(_ user: UserRegistrationRequest, _ CompletionHandler: @escaping (UserRegistrationResponse?)->(Void)) {
         
-        guard let url = URL(string: "") else {
+        guard let url = URL(string: "https://bezkoder-server.herokuapp.com/api/insertUser") else {
             return
         }
         
@@ -22,42 +22,49 @@ class WebService {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        // change the name of variables
         let json = [
-            "username": username,
-            "password": password
+            "username": user.username,
+            "password": user.password,
+            "name": user.name,
+            "surname": user.surname,
+            "email": user.email
         ]
         
         do{
             request.httpBody = try JSONSerialization.data(withJSONObject: json)
         }
         catch let error{
-            print(error.localizedDescription)
+            print(error)
         }
         
         let task = session.dataTask(with: request) { data, response, error in
             
             if let error = error {
-                print(error.localizedDescription)
+                print(error)
                 return
             }
             
+           guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+               print("Server error!")
+               return
+           }
+
+           guard let mime = response.mimeType, mime == "application/json" else {
+               print("Wrong MIME type!")
+               return
+           }
             
-            do {
-                
-                let json = try JSONSerialization.jsonObject(with: data!) as? NSDictionary
+            if let data = data {
+                let json = try? JSONDecoder().decode(UserRegistrationResponse.self, from: data)
                 
                 if let json = json {
-                    // take userid and do some processs
+                    CompletionHandler(json)
                 }
-                
-            }catch let error {
-                print(error.localizedDescription)
+                else {
+                    CompletionHandler(nil)
+                }
             }
-            
-            
-            
-            
+   
         }
         task.resume()
     }

@@ -44,25 +44,14 @@ class WebService {
                 return
             }
             
-           guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
                print("Server error!")
                return
-           }
-
-           guard let mime = response.mimeType, mime == "application/json" else {
-               print("Wrong MIME type!")
-               return
-           }
+            }
             
             if let data = data {
                 let json = try? JSONDecoder().decode(UserRegistrationResponse.self, from: data)
-                
-                if let json = json {
-                    CompletionHandler(json)
-                }
-                else {
-                    CompletionHandler(nil)
-                }
+                CompletionHandler(json)
             }
    
         }

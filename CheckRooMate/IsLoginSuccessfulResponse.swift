@@ -8,6 +8,6 @@
 import Foundation
 
 struct IsLoginSuccessfulResponse: Codable {
-    let result: [UserLoginResult]?
+    let result: UserLoginResult?
     let isLoginSuccessful: Bool?
 }

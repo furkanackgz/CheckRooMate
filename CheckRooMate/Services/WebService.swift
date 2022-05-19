@@ -91,17 +91,23 @@ class WebService {
         }
         
         let _ = session.dataTask(with: request) { data, response, error in
+            
             if let error = error {
-                print(error.localizedDescription)
+                print(error)
                 return
             }
             
-            do {
-                let json = try JSONDecoder().decode(IsLoginSuccessfulResponse.self, from: data!)
-                CompletionHandler(json)
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+               print("Server error!")
+               return
+            }
+            
+            if let data = data {
+                let json = try? JSONDecoder().decode(IsLoginSuccessfulResponse.self, from: data)
                 
-            } catch let error {
-                print(error)
+                if let json = json {
+                    CompletionHandler(json)
+                }
             }
             
         }.resume()

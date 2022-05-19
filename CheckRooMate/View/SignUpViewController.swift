@@ -65,6 +65,18 @@ class SignUpViewController: UIViewController {
             displayAlertMessage("Passwords are not matched!")
             return
         }
+        
+        let userRegistrationRequest = UserRegistrationRequest(username: username,
+                                    password: password, name: name, surname: surname, email: email)
+        
+        WebService.run.signUpUser(userRegistrationRequest) { response in
+            if response == nil {
+                self.displayAlertMessageWithHandler("Successfully registered user!")
+            } else {
+                self.displayAlertMessage("Duplicate user info!")
+            }
+        }
+        
     }
     
 }
@@ -86,10 +98,24 @@ extension SignUpViewController: UITextFieldDelegate {
     }
     
     func displayAlertMessage(_ message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        let alertButton = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        alert.addAction(alertButton)
-        
-        self.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+            let alertButton = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(alertButton)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func displayAlertMessageWithHandler(_ message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Info", message: message, preferredStyle: .alert)
+            let alertButton = UIAlertAction(title: "Go back to Sign In", style: .default) { UIAlertAction in
+                self.performSegue(withIdentifier: "toSignInVC", sender: self)
+            }
+            alert.addAction(alertButton)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }

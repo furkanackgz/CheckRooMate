@@ -111,6 +111,7 @@
                             <constraint firstItem="K96-WP-SWc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y1y-HF-yJZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6yH-Pl-gz1"/>
                     <connections>
                         <outlet property="textFieldPassword" destination="r1r-Qo-agh" id="iCF-b1-mwj"/>
                         <outlet property="textFieldUsername" destination="Csc-iI-qR1" id="SF0-XT-Cw3"/>
@@ -305,6 +306,7 @@
                         <outlet property="textFieldPasswordAgain" destination="GnR-8s-GfP" id="dau-sB-4YB"/>
                         <outlet property="textFieldSurname" destination="HB0-8s-H2y" id="DIm-Zn-C6g"/>
                         <outlet property="textFieldUsername" destination="yJP-rb-i5Q" id="UBw-kp-dBU"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toSignInVC" modalPresentationStyle="fullScreen" id="p3Y-ax-mWS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ex4-A6-Y1S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

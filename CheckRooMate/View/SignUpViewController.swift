@@ -110,8 +110,8 @@ extension SignUpViewController: UITextFieldDelegate {
     func displayAlertMessageWithHandler(_ message: String) {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Info", message: message, preferredStyle: .alert)
-            let alertButton = UIAlertAction(title: "Go back to Sign In", style: .default) { UIAlertAction in
-                self.performSegue(withIdentifier: "toSignInVC", sender: self)
+            let alertButton = UIAlertAction(title: "Ok", style: .default) { UIAlertAction in
+                self.navigationController?.popViewController(animated: true)
             }
             alert.addAction(alertButton)
             

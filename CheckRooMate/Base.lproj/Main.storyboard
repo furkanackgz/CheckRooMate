@@ -37,6 +37,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter username" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Csc-iI-qR1">
+                                <rect key="frame" x="40" y="206" width="334" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Soz-PH-J27"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcx-eQ-cZL">
                                 <rect key="frame" x="40" y="266" width="75.5" height="30"/>
                                 <constraints>
@@ -77,14 +85,6 @@
                                     <action selector="buttonDontHaveAnAccountTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WwB-MH-1Vd"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter username" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Csc-iI-qR1">
-                                <rect key="frame" x="40" y="206" width="334" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Soz-PH-J27"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

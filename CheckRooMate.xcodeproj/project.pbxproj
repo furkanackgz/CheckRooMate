@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B08FE90283BA18D00877B11 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0B08FE8F283BA18D00877B11 /* IQKeyboardManagerSwift */; };
 		0B562572282255AC00413489 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B562571282255AC00413489 /* PostViewController.swift */; };
 		0B5CE18A2834AF4000D854DD /* UserLoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CE1892834AF4000D854DD /* UserLoginResult.swift */; };
 		0B5CE18C2834B03B00D854DD /* IsLoginSuccessfulResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5CE18B2834B03B00D854DD /* IsLoginSuccessfulResponse.swift */; };
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B08FE90283BA18D00877B11 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +147,9 @@
 			dependencies = (
 			);
 			name = CheckRooMate;
+			packageProductDependencies = (
+				0B08FE8F283BA18D00877B11 /* IQKeyboardManagerSwift */,
+			);
 			productName = CheckRooMate;
 			productReference = 0B5F97012816D9D600A18BE5 /* CheckRooMate.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +178,9 @@
 				Base,
 			);
 			mainGroup = 0B5F96F82816D9D600A18BE5;
+			packageReferences = (
+				0B08FE8E283BA18D00877B11 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = 0B5F97022816D9D600A18BE5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -430,6 +438,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0B08FE8E283BA18D00877B11 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B08FE8F283BA18D00877B11 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B08FE8E283BA18D00877B11 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0B5F96F92816D9D600A18BE5 /* Project object */;
 }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct GetAllPostsResponse {
+struct GetAllPostsResponse: Codable {
     var posts: [Post]?
 }

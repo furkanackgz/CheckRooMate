@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sign In View Controller-->
+        <!--SIGN IN-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SignInViewController" customModule="CheckRooMate" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,7 +98,9 @@
                             <constraint firstItem="K96-WP-SWc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y1y-HF-yJZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6yH-Pl-gz1"/>
+                    <navigationItem key="navigationItem" title="SIGN IN" id="6yH-Pl-gz1">
+                        <barButtonItem key="backBarButtonItem" title=" " id="odg-H8-DQF"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="textFieldPassword" destination="r1r-Qo-agh" id="iCF-b1-mwj"/>
                         <outlet property="textFieldUsername" destination="Csc-iI-qR1" id="SF0-XT-Cw3"/>
@@ -110,7 +112,7 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="87.723214285714278"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--SIGN UP-->
         <scene sceneID="4Mk-8w-HYt">
             <objects>
                 <viewController id="HMF-kt-6af" customClass="SignUpViewController" customModule="CheckRooMate" customModuleProvider="target" sceneMemberID="viewController">
@@ -272,7 +274,7 @@
                             <constraint firstItem="yJP-rb-i5Q" firstAttribute="leading" secondItem="E6M-n1-0ck" secondAttribute="leading" constant="40" id="xzt-Sx-TkP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="TKM-dg-BNh"/>
+                    <navigationItem key="navigationItem" title="SIGN UP" id="TKM-dg-BNh"/>
                     <connections>
                         <outlet property="textFieldEmail" destination="tMj-md-4JB" id="gf7-qW-m76"/>
                         <outlet property="textFieldName" destination="WRu-v6-FmD" id="bTq-ds-Nrx"/>

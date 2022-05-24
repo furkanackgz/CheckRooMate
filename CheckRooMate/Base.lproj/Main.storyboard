@@ -315,12 +315,28 @@
         <!--Profile-->
         <scene sceneID="u3C-ED-ISa">
             <objects>
-                <viewController id="oTS-iT-YPt" sceneMemberID="viewController">
+                <viewController id="oTS-iT-YPt" customClass="ProfileViewController" customModule="CheckRooMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="59F-3D-Zoe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBo-1R-ay7">
+                                <rect key="frame" x="150.5" y="424.5" width="113.5" height="47.5"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="28"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logoutBttnTapped:" destination="oTS-iT-YPt" eventType="touchUpInside" id="DER-gK-CiE"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Fxb-9V-PIZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QBo-1R-ay7" firstAttribute="centerX" secondItem="59F-3D-Zoe" secondAttribute="centerX" id="aDt-Xb-kfZ"/>
+                            <constraint firstItem="QBo-1R-ay7" firstAttribute="centerY" secondItem="59F-3D-Zoe" secondAttribute="centerY" id="cOG-CU-3Rz"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="xwO-Ds-Ich"/>
                 </viewController>
@@ -503,7 +519,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="X3V-Lw-sKS">
             <objects>
-                <tabBarController id="INp-dO-MXs" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="INp-dO-MXs" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fCz-5V-6IH"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hGw-No-jVx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -541,7 +557,7 @@
         <!--Navigation Controller-->
         <scene sceneID="f6d-os-vZ9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zBs-MT-WSV" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="zBs-MT-WSV" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZGt-0a-KcZ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

@@ -21,6 +21,7 @@
 		0B8758B5283273AD00603D00 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8758B4283273AD00603D00 /* WebService.swift */; };
 		0B9779D728180728008970D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9779D628180728008970D6 /* HomeViewController.swift */; };
 		0BBEEBFB282922F6000F5FBB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBEEBFA282922F6000F5FBB /* ImageCollectionViewCell.swift */; };
+		0BF96749283CD8EA005838BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF96748283CD8EA005838BE /* ProfileViewController.swift */; };
 		0BFAE2B22834EE030037DFFA /* UserRegistrationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAE2B12834EE030037DFFA /* UserRegistrationRequest.swift */; };
 		0BFAE2B42834F5B60037DFFA /* UserRegistrationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAE2B32834F5B60037DFFA /* UserRegistrationResponse.swift */; };
 		0BFAE2B62834F6BA0037DFFA /* UserRegistrationErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAE2B52834F6BA0037DFFA /* UserRegistrationErrorResult.swift */; };
@@ -42,6 +43,7 @@
 		0B8758B4283273AD00603D00 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		0B9779D628180728008970D6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0BBEEBFA282922F6000F5FBB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		0BF96748283CD8EA005838BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0BFAE2B12834EE030037DFFA /* UserRegistrationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserRegistrationRequest.swift; path = CheckRooMate/UserRegistrationRequest.swift; sourceTree = SOURCE_ROOT; };
 		0BFAE2B32834F5B60037DFFA /* UserRegistrationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserRegistrationResponse.swift; path = CheckRooMate/UserRegistrationResponse.swift; sourceTree = SOURCE_ROOT; };
 		0BFAE2B52834F6BA0037DFFA /* UserRegistrationErrorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserRegistrationErrorResult.swift; path = CheckRooMate/UserRegistrationErrorResult.swift; sourceTree = SOURCE_ROOT; };
@@ -69,6 +71,7 @@
 				0B9779D628180728008970D6 /* HomeViewController.swift */,
 				0B562571282255AC00413489 /* PostViewController.swift */,
 				0BBEEBFA282922F6000F5FBB /* ImageCollectionViewCell.swift */,
+				0BF96748283CD8EA005838BE /* ProfileViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				0B5CE18A2834AF4000D854DD /* UserLoginResult.swift in Sources */,
 				0BFAE2B42834F5B60037DFFA /* UserRegistrationResponse.swift in Sources */,
 				0BFAE2B22834EE030037DFFA /* UserRegistrationRequest.swift in Sources */,
+				0BF96749283CD8EA005838BE /* ProfileViewController.swift in Sources */,
 				0B9779D728180728008970D6 /* HomeViewController.swift in Sources */,
 				0B8758B5283273AD00603D00 /* WebService.swift in Sources */,
 				0B5F97092816D9D600A18BE5 /* SignInViewController.swift in Sources */,

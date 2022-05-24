@@ -38,12 +38,18 @@ class SignInViewController: UIViewController {
         
         WebService.run.signInUser(username, password) { isLoginSuccessful in
             DispatchQueue.main.async {
-                if let isSuccessful = isLoginSuccessful.isLoginSuccessful {
-                    if isSuccessful {
-                        self.performSegue(withIdentifier: "toHomeVC", sender: nil)
-                    }
-                    else {
-                        // show allert and looks like you dont have an account ask would you like to sign up
+                if let isLoginSuccessful = isLoginSuccessful,
+                   let isSuccessful = isLoginSuccessful.isLoginSuccessful{
+                    // Username and Password are valid
+                    if isSuccessful{
+                        if let loginResult = isLoginSuccessful.result {
+                            // set username to UserDefaults to prevent showing login VC again
+                            UserDefaults.standard.set(loginResult.userId!, forKey: "UserID")
+                            self.performSegue(withIdentifier: "toHomeVC", sender: nil)
+                        }
+                    } else {
+                        // Show username or password is wrong please check again
+                        self.displayAlertMessage("Username or Password is wrong!")
                     }
                 }
             }
@@ -66,6 +72,16 @@ extension SignInViewController: UITextFieldDelegate {
         self.textFieldUsername.resignFirstResponder()
         self.textFieldPassword.resignFirstResponder()
         return true
+    }
+    
+    func displayAlertMessage(_ message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+            let alertButton = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alert.addAction(alertButton)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 

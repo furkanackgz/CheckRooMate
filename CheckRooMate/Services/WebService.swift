@@ -114,3 +114,32 @@ extension WebService {
     }
     
 }
+
+// Get All Posts
+extension WebService {
+    
+    func getAllPosts(_ CompletionHandler: @escaping ([Post]?)->(Void)) {
+        
+        guard let url = URL(string: "https://bezkoder-server.herokuapp.com/api/getPosts") else { return }
+        
+        let _ = session.dataTask(with: url) { data, response, error in
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+               print("Server error!")
+               return
+            }
+            
+            if let data = data {
+                let json = try? JSONDecoder().decode([Post].self, from: data)
+                CompletionHandler(json)
+            }
+            
+        }.resume()
+    }
+    
+}

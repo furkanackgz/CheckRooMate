@@ -143,3 +143,38 @@ extension WebService {
     }
     
 }
+
+// Get Username
+extension WebService {
+    
+    func getUsername(_ userID: Int, _ completionHandler:@escaping ([Username]?)->(Void)) {
+        
+        guard var urlComponents = URLComponents(string: "https://bezkoder-server.herokuapp.com/api/getUsernameFromId") else {return}
+        
+        urlComponents.queryItems = [
+            URLQueryItem(name: "userId", value: String(userID))
+        ]
+        
+        let _ = session.dataTask(with: urlComponents.url!) { data, response, error in
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+               print(response.debugDescription)
+               return
+            }
+            
+            do {
+                let json = try JSONDecoder().decode([Username].self, from: data!)
+                completionHandler(json)
+            } catch let error {
+                print(error)
+            }
+            
+        }.resume()
+    }
+    
+}

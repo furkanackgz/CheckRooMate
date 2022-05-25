@@ -23,8 +23,17 @@ class HomeViewController: UIViewController {
         }
     }
     
+    var posts: [Post]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchPosts { posts in
+            self.posts = posts
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,13 +77,32 @@ extension HomeViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if let posts = posts {
+            return posts.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "Furkan"
+        guard let posts = posts else {
+            return UITableViewCell()
+        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostTableViewCell
+        cell.post = posts[indexPath.row]
         return cell
+    }
+    
+}
+
+extension HomeViewController {
+    
+    func fetchPosts(_ completionHandler: @escaping ([Post]) -> ()) {
+        WebService.run.getAllPosts { posts in
+            guard let posts = posts else {
+                return
+            }
+            completionHandler(posts)
+        }
     }
     
 }

@@ -178,3 +178,38 @@ extension WebService {
     }
     
 }
+
+// Get Post Comments
+extension WebService {
+    
+    func getPostComments(_ postId: Int, _ completionHandler: @escaping ([PostComment]?)->(Void)) {
+        
+        guard var urlComponents = URLComponents(string: "https://bezkoder-server.herokuapp.com/api/getPostComments") else {return}
+        
+        urlComponents.queryItems = [
+            URLQueryItem(name: "postId", value: String(postId))
+        ]
+        
+        let _ = session.dataTask(with: urlComponents.url!) { data, response, error in
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+               print(response.debugDescription)
+               return
+            }
+            
+            do {
+                let json = try JSONDecoder().decode([PostComment].self, from: data!)
+                completionHandler(json)
+            } catch let error {
+                print(error)
+            }
+            
+        }.resume()
+    }
+    
+}

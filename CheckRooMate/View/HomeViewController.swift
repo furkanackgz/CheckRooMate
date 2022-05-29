@@ -9,13 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var labelAreYouLookingFor: UILabel! {
-        didSet{
-            labelAreYouLookingFor.isUserInteractionEnabled = true
-            let tap = UITapGestureRecognizer(target: self, action: #selector(toPostVC))
-            labelAreYouLookingFor.addGestureRecognizer(tap)
-        }
-    }
+    @IBOutlet weak var labelAreYouLookingFor: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var posts: [Post]?
@@ -23,9 +17,16 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Table View
         tableView.delegate = self
         tableView.dataSource = self
         
+        // Adding Gesture to Label
+        labelAreYouLookingFor.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(toPostVC))
+        labelAreYouLookingFor.addGestureRecognizer(tap)
+        
+        // Fetching Posts using getAllPosts in WebService
         fetchPosts { posts in
             self.posts = posts
             DispatchQueue.main.async {
@@ -51,6 +52,7 @@ class HomeViewController: UIViewController {
     
 }
 
+// UI accessors implementations
 extension HomeViewController {
     /**
      Hides navigation bar before the view controller is presented.
@@ -92,6 +94,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+// Connecting to WebService
 extension HomeViewController {
     
     func fetchPosts(_ completionHandler: @escaping ([Post]) -> ()) {

@@ -76,8 +76,6 @@
 		0B2988A62818553300D654F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0B5F97042816D9D600A18BE5 /* AppDelegate.swift */,
-				0B5F97062816D9D600A18BE5 /* SceneDelegate.swift */,
 				0B5F97082816D9D600A18BE5 /* SignInViewController.swift */,
 				0B5F971A2817DA7600A18BE5 /* SignUpViewController.swift */,
 				0B9779D628180728008970D6 /* HomeViewController.swift */,
@@ -135,6 +133,8 @@
 				0B2988A82818554C00D654F8 /* View Model */,
 				0B2988A72818554100D654F8 /* Model */,
 				0B2988A62818553300D654F8 /* View */,
+				0B5F97042816D9D600A18BE5 /* AppDelegate.swift */,
+				0B5F97062816D9D600A18BE5 /* SceneDelegate.swift */,
 				0B5F970A2816D9D600A18BE5 /* Main.storyboard */,
 				0B5F970D2816D9DB00A18BE5 /* Assets.xcassets */,
 				0B5F970F2816D9DB00A18BE5 /* LaunchScreen.storyboard */,

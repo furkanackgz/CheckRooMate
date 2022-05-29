@@ -16,17 +16,15 @@ class HomeViewController: UIViewController {
             labelAreYouLookingFor.addGestureRecognizer(tap)
         }
     }
-    @IBOutlet weak var tableView: UITableView! {
-        didSet{
-            tableView.delegate = self
-            tableView.dataSource = self
-        }
-    }
+    @IBOutlet weak var tableView: UITableView!
     
     var posts: [Post]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         fetchPosts { posts in
             self.posts = posts

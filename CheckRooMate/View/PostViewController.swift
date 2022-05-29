@@ -8,30 +8,26 @@
 import UIKit
 import PhotosUI
 
-class PostViewController: UIViewController, UITextViewDelegate {
+class PostViewController: UIViewController {
 
-    @IBOutlet weak var textView: UITextView! {
-        didSet{
-            textView.text = "Enter text"
-            textView.textColor = UIColor.lightGray
-            
-            textView.delegate = self
-        }
-    }
+    @IBOutlet weak var textView: UITextView!
     
-    @IBOutlet weak var collectionView: UICollectionView!{
-        didSet {
-            collectionView.dataSource = self
-            collectionView.delegate = self
-            
-            collectionView.collectionViewLayout = self.createBasicListLayout()
-        }
-    }
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var selectedPhotos = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Text View
+        textView.delegate = self
+        textView.text = "Enter text"
+        textView.textColor = UIColor.lightGray
+        
+        // Collection View
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.collectionViewLayout = self.createBasicListLayout()
         
         addDoneBttnToKeyboard()
     
@@ -50,21 +46,8 @@ class PostViewController: UIViewController, UITextViewDelegate {
     
 }
 
+// UI accessors implementations
 extension PostViewController {
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
-                textView.text = nil
-                textView.textColor = UIColor.black
-        }
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = "Enter text"
-            textView.textColor = UIColor.lightGray
-        }
-    }
     
     func addDoneBttnToKeyboard() {
         
@@ -89,6 +72,26 @@ extension PostViewController {
     
 }
 
+// Text View Delegation methods
+extension PostViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+                textView.text = nil
+                textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Enter text"
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
+}
+
+// Choosing photos from either Photo Library or Camera
 extension PostViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate, PHPickerViewControllerDelegate {
     
     func showActionSheet() {
@@ -156,6 +159,7 @@ extension PostViewController: UIImagePickerControllerDelegate & UINavigationCont
 
 }
 
+// Collection View delegation methods
 extension PostViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

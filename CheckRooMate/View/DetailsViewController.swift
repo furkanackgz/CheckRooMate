@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DetailsViewController: UIViewController {
 
@@ -17,13 +18,20 @@ class DetailsViewController: UIViewController {
     
     var post: Post? = nil
     
+    var baseUrl = "https://soyisibucket.s3.eu-central-1.amazonaws.com/images/"
+    var photosUrls = [String.SubSequence]()
+    
     var postComments = [PostComment]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Conforming to table view delegate.
+        // Assigning table view delegate to self
         tableView.dataSource = self
+        
+        // Assigning collection view delegate to self
+        collectionView.dataSource = self
+        collectionView.collectionViewLayout = self.createBasicListLayout()
         
         // Calling setupUI method to initialize UI elements.
         setupUI()
@@ -45,6 +53,10 @@ extension DetailsViewController {
             
             // Setting rest of the proporties with post.
             postTextView.text = post.postContent
+            
+            // After post is received assign them to photosUrls
+            photosUrls.append(contentsOf: post.images!.split(separator: " "))
+            collectionView.reloadData()
             
             // Fetch comments and assign them to postComments.
             fetchPostComments(post) { [unowned self] comments in
@@ -70,6 +82,10 @@ extension DetailsViewController {
         })
     }
     
+}
+
+// WebService methods
+extension DetailsViewController {
     /**
      Fetch comments through WebService getPostComments method and
      then assign them to postComments array in addition to returning
@@ -87,8 +103,10 @@ extension DetailsViewController {
             }
         }
     }
+    
 }
 
+// Table View Delegation methods
 extension DetailsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -100,4 +118,40 @@ extension DetailsViewController: UITableViewDataSource {
         cell.comment = postComments[indexPath.row]
         return cell
     }
+}
+
+// Collection View Protocol methods
+extension DetailsViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photosUrls.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailsCollectionViewCell", for: indexPath) as! DetailsCollectionViewCell
+            
+        cell.imageView.kf.setImage(with: URL(string: "\(baseUrl)\(photosUrls[indexPath.row])"))
+        return cell
+    }
+    
+    func createBasicListLayout() -> UICollectionViewLayout {
+        let fraction: CGFloat = 1 / 2
+        let inset: CGFloat = 2.5
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fraction), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(fraction))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
+        
+        // Horizontally Scrolling
+        section.orthogonalScrollingBehavior = .continuous
+        
+        return UICollectionViewCompositionalLayout(section: section)
+    }
+    
 }

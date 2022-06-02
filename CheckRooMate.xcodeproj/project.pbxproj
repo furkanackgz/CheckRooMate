@@ -22,6 +22,7 @@
 		0B9779D728180728008970D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9779D628180728008970D6 /* HomeViewController.swift */; };
 		0BBEEBFB282922F6000F5FBB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBEEBFA282922F6000F5FBB /* ImageCollectionViewCell.swift */; };
 		0BD5F3182848F9C3003ADBC3 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD5F3172848F9C3003ADBC3 /* CommentTableViewCell.swift */; };
+		0BD5F31A28490121003ADBC3 /* DetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD5F31928490121003ADBC3 /* DetailsCollectionViewCell.swift */; };
 		0BDC03B72847FAC000A3A0F3 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC03B62847FAC000A3A0F3 /* DetailsViewController.swift */; };
 		0BF96749283CD8EA005838BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF96748283CD8EA005838BE /* ProfileViewController.swift */; };
 		0BF9674C283D1562005838BE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF9674B283D1562005838BE /* Post.swift */; };
@@ -52,6 +53,7 @@
 		0B9779D628180728008970D6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0BBEEBFA282922F6000F5FBB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		0BD5F3172848F9C3003ADBC3 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		0BD5F31928490121003ADBC3 /* DetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		0BDC03B62847FAC000A3A0F3 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		0BF96748283CD8EA005838BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0BF9674B283D1562005838BE /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				0BF96765283E7B93005838BE /* PostCollectionViewCell.swift */,
 				0BDC03B62847FAC000A3A0F3 /* DetailsViewController.swift */,
 				0BD5F3172848F9C3003ADBC3 /* CommentTableViewCell.swift */,
+				0BD5F31928490121003ADBC3 /* DetailsCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B562572282255AC00413489 /* PostViewController.swift in Sources */,
+				0BD5F31A28490121003ADBC3 /* DetailsCollectionViewCell.swift in Sources */,
 				0B5CE18A2834AF4000D854DD /* UserLoginResult.swift in Sources */,
 				0BF9675F283E7434005838BE /* PostComment.swift in Sources */,
 				0BFAE2B42834F5B60037DFFA /* UserRegistrationResponse.swift in Sources */,

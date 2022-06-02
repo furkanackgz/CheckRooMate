@@ -382,9 +382,56 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UeO-rz-956">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="90" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UeO-rz-956">
                                 <rect key="frame" x="16" y="465" width="382" height="302"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentTableViewCell" rowHeight="90" id="9P3-kn-v8e" customClass="CommentTableViewCell" customModule="CheckRooMate" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="382" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9P3-kn-v8e" id="6Qw-eE-Cm6">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpX-YI-f1w">
+                                                    <rect key="frame" x="8" y="8" width="86.5" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E4-EI-Ngn">
+                                                    <rect key="frame" x="340" y="8" width="34" height="18"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4k-ib-9wJ">
+                                                    <rect key="frame" x="8" y="37.5" width="366" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="mpW-ai-YlC"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HpX-YI-f1w" firstAttribute="top" secondItem="6Qw-eE-Cm6" secondAttribute="top" constant="8" id="5dE-iQ-NNJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="7E4-EI-Ngn" secondAttribute="trailing" constant="8" id="OUE-ea-W0b"/>
+                                                <constraint firstAttribute="trailing" secondItem="T4k-ib-9wJ" secondAttribute="trailing" constant="8" id="SBr-g3-sFo"/>
+                                                <constraint firstItem="T4k-ib-9wJ" firstAttribute="top" secondItem="HpX-YI-f1w" secondAttribute="bottom" constant="8" id="Sfi-kO-Mfw"/>
+                                                <constraint firstItem="HpX-YI-f1w" firstAttribute="leading" secondItem="6Qw-eE-Cm6" secondAttribute="leading" constant="8" id="eJw-kH-ZWu"/>
+                                                <constraint firstItem="T4k-ib-9wJ" firstAttribute="leading" secondItem="6Qw-eE-Cm6" secondAttribute="leading" constant="8" id="ksv-AX-Fxw"/>
+                                                <constraint firstItem="7E4-EI-Ngn" firstAttribute="top" secondItem="6Qw-eE-Cm6" secondAttribute="top" constant="8" id="nO1-LR-062"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentContentLabel" destination="T4k-ib-9wJ" id="JUa-Vm-LJR"/>
+                                            <outlet property="timeLabel" destination="7E4-EI-Ngn" id="CfT-N3-8y4"/>
+                                            <outlet property="usernameLabel" destination="HpX-YI-f1w" id="abp-Vv-nwV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="write comment..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ee-F4-ZVe">
                                 <rect key="frame" x="16" y="782" width="342" height="30"/>

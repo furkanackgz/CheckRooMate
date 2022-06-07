@@ -13,6 +13,12 @@ class VisitedUserReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var labelTime: UILabel!
     @IBOutlet weak var labelReviewContent: UILabel!
     
+    var userID: Int? {
+        didSet{
+            setUsernameToLabel(userID!)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,4 +30,27 @@ class VisitedUserReviewTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+extension VisitedUserReviewTableViewCell {
+    
+    /**
+     Fetch usernameArray which holds Username models
+     by using WebService getUsername method. Take the first element
+     of array and use its username field for assigning it to
+     labelUsername.
+     
+     - parameter post: Specific post which is used to get userId in it.
+     */
+    func setUsernameToLabel(_ userId: Int) {
+        WebService.run.getUsername(userId, { usernameArray in
+            if let usernameArray = usernameArray,
+               let usernameObject = usernameArray.first,
+               let username = usernameObject.username{
+                DispatchQueue.main.async {
+                    self.labelUsername.text = username
+                }
+            }
+        })
+    }
 }

@@ -873,9 +873,56 @@
                                     <action selector="addBttnTapped:" destination="2f1-Ah-LyD" eventType="touchUpInside" id="crx-ex-fWD"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="akM-CD-acp">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="90" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="akM-CD-acp">
                                 <rect key="frame" x="20" y="406" width="374" height="450"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="VisitedUserReviewTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="90" id="96L-3W-qxk" customClass="VisitedUserReviewTableViewCell" customModule="CheckRooMate" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="96L-3W-qxk" id="9iG-xm-Ujt">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fk-M4-0DE">
+                                                    <rect key="frame" x="8" y="8" width="86.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71d-Ro-4Cc">
+                                                    <rect key="frame" x="332" y="8" width="34" height="18"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9J-6S-cgY">
+                                                    <rect key="frame" x="8" y="37" width="358" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="DGh-Ua-bwW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1Fk-M4-0DE" firstAttribute="top" secondItem="9iG-xm-Ujt" secondAttribute="top" constant="8" id="6O6-LL-kar"/>
+                                                <constraint firstItem="a9J-6S-cgY" firstAttribute="top" secondItem="1Fk-M4-0DE" secondAttribute="bottom" constant="8" id="7tL-RO-ZRN"/>
+                                                <constraint firstItem="a9J-6S-cgY" firstAttribute="leading" secondItem="9iG-xm-Ujt" secondAttribute="leading" constant="8" id="GNA-8Q-05u"/>
+                                                <constraint firstAttribute="trailing" secondItem="71d-Ro-4Cc" secondAttribute="trailing" constant="8" id="Pug-Wa-w2l"/>
+                                                <constraint firstItem="1Fk-M4-0DE" firstAttribute="leading" secondItem="9iG-xm-Ujt" secondAttribute="leading" constant="8" id="jTR-KU-atE"/>
+                                                <constraint firstItem="71d-Ro-4Cc" firstAttribute="top" secondItem="9iG-xm-Ujt" secondAttribute="top" constant="8" id="k2l-wW-HOs"/>
+                                                <constraint firstAttribute="trailing" secondItem="a9J-6S-cgY" secondAttribute="trailing" constant="8" id="tyt-bT-nww"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelReviewContent" destination="a9J-6S-cgY" id="rLf-VQ-koP"/>
+                                            <outlet property="labelTime" destination="71d-Ro-4Cc" id="MRL-SZ-TJm"/>
+                                            <outlet property="labelUsername" destination="1Fk-M4-0DE" id="zsH-IC-BEj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Frg-Ll-7KA"/>
@@ -934,7 +981,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YD8-Gr-ORI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5271" y="433"/>
+            <point key="canvasLocation" x="5269.5652173913049" y="432.58928571428572"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="pR8-Gl-rDy">

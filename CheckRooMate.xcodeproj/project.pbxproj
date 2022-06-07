@@ -28,6 +28,7 @@
 		0BE8F52D284F859700814C47 /* UserReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE8F52C284F859700814C47 /* UserReviewTableViewCell.swift */; };
 		0BE8F531284FA5A000814C47 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE8F530284FA5A000814C47 /* UserInformation.swift */; };
 		0BE8F533284FC1DA00814C47 /* VisitedProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE8F532284FC1DA00814C47 /* VisitedProfileViewController.swift */; };
+		0BE8F535284FC6BF00814C47 /* VisitedUserReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE8F534284FC6BF00814C47 /* VisitedUserReviewTableViewCell.swift */; };
 		0BF96749283CD8EA005838BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF96748283CD8EA005838BE /* ProfileViewController.swift */; };
 		0BF9674C283D1562005838BE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF9674B283D1562005838BE /* Post.swift */; };
 		0BF9675D283E739A005838BE /* Username.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF9675C283E739A005838BE /* Username.swift */; };
@@ -63,6 +64,7 @@
 		0BE8F52C284F859700814C47 /* UserReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviewTableViewCell.swift; sourceTree = "<group>"; };
 		0BE8F530284FA5A000814C47 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		0BE8F532284FC1DA00814C47 /* VisitedProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedProfileViewController.swift; sourceTree = "<group>"; };
+		0BE8F534284FC6BF00814C47 /* VisitedUserReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitedUserReviewTableViewCell.swift; sourceTree = "<group>"; };
 		0BF96748283CD8EA005838BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0BF9674B283D1562005838BE /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		0BF9675C283E739A005838BE /* Username.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Username.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				0BD5F31928490121003ADBC3 /* DetailsCollectionViewCell.swift */,
 				0BE8F52C284F859700814C47 /* UserReviewTableViewCell.swift */,
 				0BE8F532284FC1DA00814C47 /* VisitedProfileViewController.swift */,
+				0BE8F534284FC6BF00814C47 /* VisitedUserReviewTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				0BFAE2B62834F6BA0037DFFA /* UserRegistrationErrorResult.swift in Sources */,
 				0B5CE18C2834B03B00D854DD /* IsLoginSuccessfulResponse.swift in Sources */,
 				0BF96766283E7B93005838BE /* PostCollectionViewCell.swift in Sources */,
+				0BE8F535284FC6BF00814C47 /* VisitedUserReviewTableViewCell.swift in Sources */,
 				0B5F97052816D9D600A18BE5 /* AppDelegate.swift in Sources */,
 				0B5F971B2817DA7600A18BE5 /* SignUpViewController.swift in Sources */,
 				0BE8F52D284F859700814C47 /* UserReviewTableViewCell.swift in Sources */,

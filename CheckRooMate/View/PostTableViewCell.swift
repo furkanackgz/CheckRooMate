@@ -31,7 +31,7 @@ class PostTableViewCell: UITableViewCell {
     
     var postComments = [PostComment]()
     
-    var baseUrl = "https://soyisibucket.s3.eu-central-1.amazonaws.com/images/"
+    var baseUrl = "https://soyisibucket2.s3.eu-central-1.amazonaws.com/images/"
     var photosUrls = [String.SubSequence]()
     
     override func awakeFromNib() {

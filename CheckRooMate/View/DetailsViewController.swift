@@ -18,7 +18,7 @@ class DetailsViewController: UIViewController {
     
     var post: Post? = nil
     
-    var baseUrl = "https://soyisibucket.s3.eu-central-1.amazonaws.com/images/"
+    var baseUrl = "https://soyisibucket2.s3.eu-central-1.amazonaws.com/images/"
     var photosUrls = [String.SubSequence]()
     
     var postComments = [PostComment]()

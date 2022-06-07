@@ -23,8 +23,15 @@ class DetailsViewController: UIViewController {
     
     var postComments = [PostComment]()
     
+    var username: String?
+    var userId: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Add Tap Gesture Recognizer to labelUsername
+        labelUsername.isUserInteractionEnabled = true
+        labelUsername.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(labelUsernameTapped)))
         
         // Assigning table view delegate to self
         tableView.dataSource = self
@@ -46,10 +53,24 @@ class DetailsViewController: UIViewController {
 
 extension DetailsViewController {
     
+    @objc func labelUsernameTapped() {
+        if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VisitedProfileViewController") as? VisitedProfileViewController {
+            
+            // Sending post corresponding to the row at table.
+            vc.username = username
+            vc.profileID = userId
+            // Navigating to DetailsVC
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     func setupUI() {
         if let post = post {
             // Setting username by using userId.
             setUsername()
+            
+            // Setting userId
+            userId = post.userId!
             
             // Setting rest of the proporties with post.
             postTextView.text = post.postContent
@@ -77,6 +98,7 @@ extension DetailsViewController {
                let username = usernameObject.username{
                 DispatchQueue.main.async {
                     self.labelUsername.text = username
+                    self.username = username
                 }
             }
         })

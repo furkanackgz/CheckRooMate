@@ -18,7 +18,11 @@ class ProfileViewController: UIViewController {
     
     var profileID = UserDefaults.standard.integer(forKey: "UserID")
     var reviews: [UserReview] = []
-
+    var username: String? {
+        didSet{
+            setUserInformationsByUsername(username!)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +57,8 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController {
     
     func setupUI() {
-        
+        // Setting only username label
+        setUsernameToLabel(profileID)
     }
     
     func fetchUserReviews() {
@@ -67,6 +72,46 @@ extension ProfileViewController {
     
 }
 
+// Fetching username by giving the profile userId
+extension ProfileViewController {
+    
+    /**
+     Fetch usernameArray which holds Username models
+     by using WebService getUsername method. Take the first element
+     of array and use its username field for assigning it to
+     labelUsername.
+     
+     - parameter userId: userId of the user
+     */
+    func setUsernameToLabel(_ userId: Int) {
+        WebService.run.getUsername(userId, { usernameArray in
+            if let usernameArray = usernameArray,
+               let usernameObject = usernameArray.first,
+               let username = usernameObject.username{
+                DispatchQueue.main.async {
+                    self.labelUsername.text = "  " + username
+                    self.username = username
+                }
+            }
+        })
+    }
+    
+    func setUserInformationsByUsername(_ username: String) {
+        
+        WebService.run.getUserInformation(username: username) { [unowned self] userInformation in
+            DispatchQueue.main.async {
+                self.labelName.text = "  " + (userInformation[0].name ?? "")
+                self.labelSurname.text = "  " + (userInformation[0].surname ?? "")
+                self.labelEmail.text = "  " + (userInformation[0].email ?? "")
+                self.labelPhone.text = "  " + (userInformation[0].phone ?? "")
+            }
+        }
+        
+    }
+    
+}
+
+// Table View Delegatin methods
 extension ProfileViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

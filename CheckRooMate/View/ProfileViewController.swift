@@ -9,6 +9,14 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var labelUsername: UILabel!
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelSurname: UILabel!
+    @IBOutlet weak var labelEmail: UILabel!
+    @IBOutlet weak var labelPhone: UILabel!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,4 +33,13 @@ class ProfileViewController: UIViewController {
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(loginNavController)
 
     }
+    
+    @IBAction func editProfileBttnTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func addBttnTapped(_ sender: Any) {
+        
+    }
+    
 }

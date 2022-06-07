@@ -425,24 +425,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ON-TQ-hFH">
-                                <rect key="frame" x="20" y="385" width="318" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzX-ze-O8L">
-                                <rect key="frame" x="344" y="385" width="50" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="cQm-bH-5jX"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Add"/>
-                                <connections>
-                                    <action selector="addBttnTapped:" destination="oTS-iT-YPt" eventType="touchUpInside" id="L2q-QH-JzI"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VU9-3A-LHM">
-                                <rect key="frame" x="20" y="425" width="374" height="382"/>
+                                <rect key="frame" x="20" y="385" width="374" height="422"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgs-ep-BGE">
@@ -467,7 +451,7 @@
                             <constraint firstItem="1ZJ-bz-qTf" firstAttribute="top" secondItem="7X5-iE-X93" secondAttribute="bottom" constant="20" id="46p-49-3KZ"/>
                             <constraint firstItem="fgs-ep-BGE" firstAttribute="top" secondItem="N3s-BP-kn1" secondAttribute="bottom" constant="6" id="4wu-sH-zKw"/>
                             <constraint firstItem="Fxb-9V-PIZ" firstAttribute="trailing" secondItem="OB7-XT-e7i" secondAttribute="trailing" constant="20" id="5yS-qo-fOo"/>
-                            <constraint firstItem="Fxb-9V-PIZ" firstAttribute="trailing" secondItem="nzX-ze-O8L" secondAttribute="trailing" constant="20" id="9ys-YV-MZo"/>
+                            <constraint firstItem="VU9-3A-LHM" firstAttribute="top" secondItem="Yok-EV-JOz" secondAttribute="bottom" constant="6" id="877-KO-fu9"/>
                             <constraint firstItem="Fxb-9V-PIZ" firstAttribute="trailing" secondItem="fgs-ep-BGE" secondAttribute="trailing" constant="20" id="Bnv-yZ-GJ1"/>
                             <constraint firstItem="aYg-g7-NJg" firstAttribute="leading" secondItem="Fxb-9V-PIZ" secondAttribute="leading" constant="20" id="C1M-zx-49f"/>
                             <constraint firstItem="A0z-tx-e1T" firstAttribute="top" secondItem="UrN-Pp-MJI" secondAttribute="bottom" constant="8" id="Db3-6H-tE4"/>
@@ -478,21 +462,16 @@
                             <constraint firstItem="1ZJ-bz-qTf" firstAttribute="leading" secondItem="Fxb-9V-PIZ" secondAttribute="leading" constant="20" id="I2A-bt-Mv4"/>
                             <constraint firstItem="Fxb-9V-PIZ" firstAttribute="bottom" secondItem="VU9-3A-LHM" secondAttribute="bottom" constant="6" id="Ign-db-eNA"/>
                             <constraint firstItem="Fxb-9V-PIZ" firstAttribute="trailing" secondItem="N3s-BP-kn1" secondAttribute="trailing" constant="20" id="KaH-V8-nBm"/>
-                            <constraint firstItem="nzX-ze-O8L" firstAttribute="leading" secondItem="4ON-TQ-hFH" secondAttribute="trailing" constant="6" id="Kgw-lg-WYO"/>
                             <constraint firstItem="7X5-iE-X93" firstAttribute="leading" secondItem="Fxb-9V-PIZ" secondAttribute="leading" constant="20" id="Mbb-VJ-vgO"/>
-                            <constraint firstItem="VU9-3A-LHM" firstAttribute="top" secondItem="4ON-TQ-hFH" secondAttribute="bottom" constant="6" id="MsK-V2-s2p"/>
                             <constraint firstItem="A0z-tx-e1T" firstAttribute="leading" secondItem="c5s-Nb-QcX" secondAttribute="trailing" constant="6" id="Mvy-hR-wy6"/>
                             <constraint firstItem="N3s-BP-kn1" firstAttribute="top" secondItem="OB7-XT-e7i" secondAttribute="bottom" constant="8" id="Opl-z9-asM"/>
                             <constraint firstItem="5lM-gY-Gkl" firstAttribute="leading" secondItem="Fxb-9V-PIZ" secondAttribute="leading" constant="20" id="QCI-DW-y3x"/>
                             <constraint firstItem="Yok-EV-JOz" firstAttribute="leading" secondItem="Fxb-9V-PIZ" secondAttribute="leading" constant="20" id="SPd-lV-xgE"/>
                             <constraint firstItem="OB7-XT-e7i" firstAttribute="top" secondItem="UlN-OJ-sUJ" secondAttribute="bottom" constant="8" id="VIz-ZX-DTy"/>
-                            <constraint firstItem="nzX-ze-O8L" firstAttribute="top" secondItem="Yok-EV-JOz" secondAttribute="bottom" constant="6" id="VRW-ey-MZQ"/>
-                            <constraint firstItem="4ON-TQ-hFH" firstAttribute="leading" secondItem="Fxb-9V-PIZ" secondAttribute="leading" constant="20" id="Wcj-ZR-6Gr"/>
                             <constraint firstItem="Fxb-9V-PIZ" firstAttribute="trailing" secondItem="UlN-OJ-sUJ" secondAttribute="trailing" constant="20" id="Xjl-qc-5mf"/>
                             <constraint firstItem="7X5-iE-X93" firstAttribute="top" secondItem="Fxb-9V-PIZ" secondAttribute="top" constant="20" id="YYr-G0-ZMd"/>
                             <constraint firstItem="c5s-Nb-QcX" firstAttribute="leading" secondItem="Fxb-9V-PIZ" secondAttribute="leading" constant="20" id="Zgw-3O-FWF"/>
                             <constraint firstItem="5lM-gY-Gkl" firstAttribute="top" secondItem="c5s-Nb-QcX" secondAttribute="bottom" constant="8" id="bZT-ZV-dYc"/>
-                            <constraint firstItem="4ON-TQ-hFH" firstAttribute="top" secondItem="Yok-EV-JOz" secondAttribute="bottom" constant="6" id="d5v-u1-NAw"/>
                             <constraint firstItem="QBo-1R-ay7" firstAttribute="top" secondItem="Fxb-9V-PIZ" secondAttribute="top" constant="20" id="h51-rB-luc"/>
                             <constraint firstItem="7pU-eP-NaT" firstAttribute="top" secondItem="aYg-g7-NJg" secondAttribute="bottom" constant="8" id="myR-76-ykj"/>
                             <constraint firstItem="Fxb-9V-PIZ" firstAttribute="trailing" secondItem="UrN-Pp-MJI" secondAttribute="trailing" constant="20" id="oa2-gV-C6p"/>
@@ -511,7 +490,6 @@
                         <outlet property="labelSurname" destination="UlN-OJ-sUJ" id="CMH-ks-NlG"/>
                         <outlet property="labelUsername" destination="UrN-Pp-MJI" id="zzr-TP-Dtf"/>
                         <outlet property="tableView" destination="VU9-3A-LHM" id="5Mx-14-PfT"/>
-                        <outlet property="textField" destination="4ON-TQ-hFH" id="p7c-NU-hBR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EX9-fF-9Jw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -699,7 +677,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XzP-bO-1SC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4355.072463768116" y="441.29464285714283"/>
+            <point key="canvasLocation" x="4355" y="433"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="pR8-Gl-rDy">

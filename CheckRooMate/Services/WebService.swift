@@ -250,3 +250,39 @@ extension WebService {
     }
     
 }
+
+// Get User Information
+extension WebService {
+    
+    func getUserInformation(username: String,
+                            _ completionHandler:@escaping ([UserInformation]) -> ()){
+        
+        guard var urlComponents = URLComponents(string: "https://bezkoder-server.herokuapp.com/api/getUserInformations") else {return}
+        
+        urlComponents.queryItems = [
+            URLQueryItem(name: "username", value: String(username))
+        ]
+        
+        let _ = session.dataTask(with: urlComponents.url!) { data, response, error in
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+               print(response.debugDescription)
+               return
+            }
+            
+            do {
+                let json = try JSONDecoder().decode([UserInformation].self, from: data!)
+                completionHandler(json)
+            } catch let error {
+                print(error)
+            }
+            
+        }.resume()
+        
+    }
+}

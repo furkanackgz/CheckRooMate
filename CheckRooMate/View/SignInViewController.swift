@@ -58,7 +58,12 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func buttonDontHaveAnAccountTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toSignUpVC", sender: nil)
+        
+        if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController {
+
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
 }

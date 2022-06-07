@@ -213,3 +213,40 @@ extension WebService {
     }
     
 }
+
+// Get User Reviews
+extension WebService {
+    
+    func getUserReviews(reviewedId: Int,
+                        _ completionHandler:@escaping ([UserReview]) -> ()) {
+        
+        guard var urlComponents = URLComponents(string: "https://bezkoder-server.herokuapp.com/api/getUserReviews") else {return}
+        
+        urlComponents.queryItems = [
+            URLQueryItem(name: "reviewedId", value: String(reviewedId))
+        ]
+        
+        let _ = session.dataTask(with: urlComponents.url!) { data, response, error in
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+               print(response.debugDescription)
+               return
+            }
+            
+            do {
+                let json = try JSONDecoder().decode([UserReview].self, from: data!)
+                completionHandler(json)
+            } catch let error {
+                print(error)
+            }
+            
+        }.resume()
+        
+    }
+    
+}

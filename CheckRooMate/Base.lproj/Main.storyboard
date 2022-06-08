@@ -1008,7 +1008,7 @@
                                 <rect key="frame" x="0.0" y="178" width="414" height="635"/>
                                 <color key="backgroundColor" red="0.86274509799999999" green="0.90980392160000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="250" id="aUw-i6-URG" customClass="PostTableViewCell" customModule="CheckRooMate" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="250" id="aUw-i6-URG" customClass="PostTableViewCell" customModule="CheckRooMate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aUw-i6-URG" id="fLz-rx-UDg">

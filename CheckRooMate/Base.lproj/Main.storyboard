@@ -1002,7 +1002,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" estimatedRowHeight="250" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WXC-V5-Gua">
                                 <rect key="frame" x="0.0" y="178" width="414" height="635"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.86274509799999999" green="0.90980392160000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PostCell" rowHeight="250" id="aUw-i6-URG" customClass="PostTableViewCell" customModule="CheckRooMate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="250"/>
@@ -1028,7 +1028,7 @@
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tgK-sS-ZiA">
                                                     <rect key="frame" x="9" y="74" width="396" height="132"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" red="0.86274509799999999" green="0.90980392160000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="132" id="rqQ-NE-KSA"/>
                                                     </constraints>
@@ -1099,6 +1099,7 @@
                                                 <constraint firstItem="tgK-sS-ZiA" firstAttribute="top" secondItem="okn-4Z-rHD" secondAttribute="bottom" constant="5" id="zv7-xp-pBA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.86274509799999999" green="0.90980392160000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="collectionView" destination="tgK-sS-ZiA" id="KBA-I2-7dd"/>
                                             <outlet property="labelCommentCount" destination="7ih-S2-MUf" id="vsO-nS-5R8"/>
@@ -1134,7 +1135,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.86113784569999996" green="0.90797691179999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.86274509803921573" green="0.90980392156862744" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" systemColor="tintColor"/>
                                 <constraints>
                                     <constraint firstItem="z7h-2W-1Bb" firstAttribute="top" secondItem="rcf-M2-4zU" secondAttribute="top" id="5yr-h4-ebK"/>
@@ -1144,7 +1145,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ybv-mw-pVm"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.86274509799999999" green="0.90980392160000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Ybv-mw-pVm" firstAttribute="bottom" secondItem="WXC-V5-Gua" secondAttribute="bottom" id="1BX-YC-OeY"/>
                             <constraint firstItem="Ybv-mw-pVm" firstAttribute="trailing" secondItem="rcf-M2-4zU" secondAttribute="trailing" id="DBN-XJ-16U"/>
@@ -1267,7 +1268,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hGw-No-jVx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.86274509799999999" green="0.90980392160000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.86274509803921573" green="0.90980392156862744" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="nXf-18-Pju" kind="relationship" relationship="viewControllers" id="J4c-Yj-tXj"/>
@@ -1287,6 +1289,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="elg-XC-Pqf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.86274509799999999" green="0.90980392160000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.86274509799999999" green="0.90980392160000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

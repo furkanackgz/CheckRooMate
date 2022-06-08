@@ -113,11 +113,11 @@
 		0B2988A72818554100D654F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0B5CE1892834AF4000D854DD /* UserLoginResult.swift */,
 				0B5CE18B2834B03B00D854DD /* IsLoginSuccessfulResponse.swift */,
+				0BFAE2B52834F6BA0037DFFA /* UserRegistrationErrorResult.swift */,
 				0BFAE2B12834EE030037DFFA /* UserRegistrationRequest.swift */,
 				0BFAE2B32834F5B60037DFFA /* UserRegistrationResponse.swift */,
-				0BFAE2B52834F6BA0037DFFA /* UserRegistrationErrorResult.swift */,
+				0B5CE1892834AF4000D854DD /* UserLoginResult.swift */,
 				0BF9674B283D1562005838BE /* Post.swift */,
 				0BF9675C283E739A005838BE /* Username.swift */,
 				0BF9675E283E7434005838BE /* PostComment.swift */,
